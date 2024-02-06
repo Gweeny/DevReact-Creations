@@ -1,0 +1,45 @@
+.menu {
+  background-color: rgba(228, 129, 98, 0.3);
+  height: 100vh;
+  z-index: 100;
+}
+
+.burger {
+  position: fixed;
+  width: 50px;
+  margin-top: 16px;
+  margin-left: 16px;
+}
+.link {
+  font-family: "CraftyGirls";
+}
+@media (min-width: 390px) and (max-width: 428px) {
+  .menu {
+    background-color: #e48162;
+    height: 100vh;
+    position: fixed;
+    width: -webkit-fill-available;
+  }
+
+  .burger {
+    position: fixed;
+    width: 50px;
+    margin-top: 16px;
+    margin-left: 16px;
+    cursor: pointer;
+  }
+  .link {
+    font-family: "CraftyGirls";
+    font-size: 40px;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 70px;
+  }
+  .links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 100px;
+    margin-left: 16px;
+  }
+}
