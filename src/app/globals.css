@@ -15,16 +15,25 @@
 
 body {
   margin: 0 !important;
+  transition: 0.3s;
 }
 
 h1 {
   font-family: "CraftyGirls", Helvetica;
-  font-size: 30px;
+  font-size: 6.75vw;
   font-weight: 400;
+  transition: 0.3s;
 }
 
 h2 {
   font-family: "Inter", Helvetica;
   font-size: 24px;
   font-weight: 400;
+  transition: 0.3s;
+}
+
+@media (max-width: 390px) {
+  h1 {
+    font-size: 6.75vw;
+  }
 }
