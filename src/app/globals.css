@@ -31,9 +31,27 @@ h2 {
   font-weight: 400;
   transition: 0.3s;
 }
+h3 {
+  font-family: "Inter", Helvetica;
+  font-size: 24px;
+  font-weight: 400;
+  transition: 0.3s;
+}
 
 @media (max-width: 390px) {
   h1 {
     font-size: 6.75vw;
+  }
+  h2 {
+    font-family: "Inter", Helvetica;
+    font-size: 24px;
+    font-weight: 400;
+    transition: 0.3s;
+  }
+  h3 {
+    font-family: "Inter", Helvetica;
+    font-size: 15px;
+    font-weight: 400;
+    transition: 0.3s;
   }
 }

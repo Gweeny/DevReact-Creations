@@ -41,17 +41,29 @@ export default function Home() {
             justifyContent: "center",
             marginTop: 40,
             color: "#f9c22e",
+            fontSize: "10vw",
           }}
         >
           A propos
         </h1>
-        <div>
+        <div style={{ position: "relative" }}>
           <SierpinskiPyramid />
+          <TriangleInverse />
         </div>
       </div>
 
       <div className={styles.contact} id="divContact">
-        <h1>Contact</h1>
+        <h1
+          style={{
+            color: "#84DCCF",
+            display: "flex",
+            justifyContent: "center",
+            fontSize: "10vw",
+          }}
+        >
+          Contact
+        </h1>
+        <IndexPage />
       </div>
     </main>
   );
@@ -141,6 +153,74 @@ const Projets = ({ nom }) => {
           <div className={styles.triangle}></div>
         </div>
       ))}
+    </div>
+  );
+};
+
+const TriangleInverse = () => {
+  return (
+    <>
+      <div className={styles.triangleBG} />
+      <div className={styles.triangleFG} />
+    </>
+  );
+};
+
+const Oval = ({ width, height, borderWidth, children }) => {
+  return (
+    <div
+      style={{
+        position: "relative",
+        width: width + "%",
+        height: height + "%",
+        borderRadius: "50%",
+        borderWidth: `${borderWidth * 0.07}em`,
+        borderColor: "#E48162",
+        borderStyle: "solid",
+        boxSizing: "border-box",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      {children}
+    </div>
+  );
+};
+
+const IndexPage = () => {
+  return (
+    <div style={{ display: "flex", justifyContent: "center", height: "60vh" }}>
+      <div style={{ position: "relative", width: "100%", maxHeight: "35em" }}>
+        <Oval width={100} height={40} borderWidth={15}>
+          <Oval width={96} height={96} borderWidth={3}>
+            <Oval width={92} height={92} borderWidth={12}>
+              <Oval width={88} height={88} borderWidth={2}>
+                <div>
+                  <div
+                    style={{
+                      color: "#84DCCF",
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
+                  >
+                    <h3>Samya Hussain</h3>
+                    <h3>E-Mail : samya.hussain@hotmail.fr</h3>
+                    <h3>Téléphone : 0649236681</h3>
+                  </div>
+                  <div>
+                    <img src="test" alt="Lin" />
+                    <img src="test" alt="Indeed" />
+                    <img src="test" alt="Github" />
+                  </div>
+                </div>
+              </Oval>
+            </Oval>
+          </Oval>
+        </Oval>
+      </div>
     </div>
   );
 };
