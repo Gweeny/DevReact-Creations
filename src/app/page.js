@@ -8,6 +8,14 @@ export default function Home() {
   const nameDevelopment = ["ReactJs", "NodeJs", "MongoDB", "Firebase"];
   const nom = ["Projet 1", "Projet 2", "Projet 3", "Projet 4"];
 
+  const rotations = [
+    { scale: 0.1, top: 20, left: 120, size: "small", rotate: 110 },
+    { scale: 0.1, top: -50, left: 150, size: "small", rotate: 20 },
+    { scale: 0.25, top: 120, left: 150, size: "medium", rotate: 40 },
+    { scale: 0.4, top: 50, left: 170, size: "large", rotate: 186 },
+    { scale: 0.4, top: -70, left: 170, size: "large", rotate: 18 },
+  ];
+
   return (
     <main className={styles.main}>
       <div className={styles.competences} id="divCompetences">
@@ -17,7 +25,19 @@ export default function Home() {
         <Jauge nameDesign={nameDesign} nameDevelopment={nameDevelopment} />
       </div>
 
-      <div style={{ marginTop: 300 }} id="divPortfolio">
+      <div style={{ marginTop: 300, position: "relative" }} id="divPortfolio">
+        <div>
+          {rotations.map((rotation, index) => (
+            <CreateTriangle
+              key={index}
+              scale={rotation.scale}
+              top={rotation.top}
+              left={rotation.left}
+              rotate={rotation.rotate}
+              size={rotation.size}
+            />
+          ))}
+        </div>
         <div className={styles.portfolio}>
           <h1
             style={{
@@ -48,6 +68,11 @@ export default function Home() {
         </h1>
         <div style={{ position: "relative" }}>
           <SierpinskiPyramid />
+          <TriangleInverse />
+          <TriangleInverse
+            styleBG={{ width: 12, left: 20 }}
+            styleFG={{ width: 12, left: 20 }}
+          />
           <TriangleInverse />
         </div>
       </div>
@@ -157,12 +182,12 @@ const Projets = ({ nom }) => {
   );
 };
 
-const TriangleInverse = () => {
+const TriangleInverse = ({ styleFG, styleBG }) => {
   return (
-    <>
-      <div className={styles.triangleBG} />
-      <div className={styles.triangleFG} />
-    </>
+    <div>
+      <div style={styleFG} className={styles.triangleBG} />
+      <div style={styleBG} className={styles.triangleFG} />
+    </div>
   );
 };
 
@@ -222,5 +247,26 @@ const IndexPage = () => {
         </Oval>
       </div>
     </div>
+  );
+};
+
+const CreateTriangle = ({ scale, top, left, rotate, size, index }) => {
+  const color = scale > 0.3 ? "#8F6F19" : "#f9c22e";
+  const zIndex = scale > 0.3 ? -2 : -1;
+
+  return (
+    <div
+      key={index}
+      className={`${styles.trianglePortfolio} ${size}`}
+      style={{
+        position: "absolute",
+        scale: scale,
+        rotate: rotate + "deg",
+        borderTopColor: color,
+        top: top + "px",
+        left: left + "px",
+        zIndex: zIndex,
+      }}
+    />
   );
 };

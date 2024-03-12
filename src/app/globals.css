@@ -37,7 +37,31 @@ h3 {
   font-weight: 400;
   transition: 0.3s;
 }
+:root {
+  --rotation-speed-small: 10s; /* Vitesse de rotation pour les petits triangles */
+  --rotation-speed-medium: 40s; /* Vitesse de rotation pour les triangles moyens */
+  --rotation-speed-large: 150s; /* Vitesse de rotation pour les grands triangles */
+}
+.small {
+  animation: rotating var(--rotation-speed-small) linear infinite;
+}
 
+.medium {
+  animation: rotating var(--rotation-speed-medium) linear infinite;
+}
+
+.large {
+  animation: rotating var(--rotation-speed-large) linear infinite;
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 @media (max-width: 390px) {
   h1 {
     font-size: 6.75vw;

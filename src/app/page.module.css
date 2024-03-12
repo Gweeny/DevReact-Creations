@@ -96,6 +96,15 @@
     border-top: 80vw solid #f9c22e;
     transition: 0.3s;
   }
+
+  .trianglePortfolio {
+    width: 0;
+    height: 0;
+    border-left: 50vw solid transparent;
+    border-right: 50vw solid transparent;
+    border-top: 80vw solid #f9c22e;
+    transition: 0.3s;
+  }
   .portfolio {
     display: flex;
     flex-direction: column;
